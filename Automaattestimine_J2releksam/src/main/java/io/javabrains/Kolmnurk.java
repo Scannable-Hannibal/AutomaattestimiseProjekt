@@ -1,6 +1,6 @@
 package io.javabrains;
 
-public class Kolmnurk {
+public class Kolmnurk implements Kuju {
 
     double kuljePikkus1;
     double kuljePikkus2;
@@ -16,6 +16,18 @@ public class Kolmnurk {
 
     double leiaUmbermoot(double kuljePikkus1, double kuljePikkus2, double kuljePikkus3){
 
+        return kuljePikkus1 + kuljePikkus2 + kuljePikkus3;
+    }
+
+    // ei t66ta ilma setterita
+    @Override
+    public double umbermoot() {
+        double s = leiaUmbermoot(kuljePikkus1, kuljePikkus2, kuljePikkus3) / 2;
+        return Math.sqrt(s * (s - kuljePikkus1) * (s - kuljePikkus2) * (s - kuljePikkus3));
+    }
+
+    @Override
+    public double pindala() {
         return kuljePikkus1 + kuljePikkus2 + kuljePikkus3;
     }
 }
